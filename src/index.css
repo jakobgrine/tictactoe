@@ -38,7 +38,7 @@ body {
 dialog {
   border: none;
   background-color: transparent;
-  color: var(--foreground-color);
+  color: white;
   font-size: 1.5rem;
 }
 
@@ -60,7 +60,7 @@ button {
   border-radius: .5rem;
   padding: .75rem 1.25rem;
   background-color: #ffffff22;
-  color: var(--foreground-color);
+  color: white;
   font-size: 1.3rem;
 }
 
