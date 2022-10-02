@@ -1,4 +1,4 @@
-import { Game } from "./game";
+import { Game, GameMode } from "./game";
 
 const game = new Game();
 
@@ -18,3 +18,21 @@ document
   ?.addEventListener("click", (event) => {
     game.restart();
   });
+
+const gameMode = localStorage.getItem("game_mode");
+const gameModeElement = document.getElementById(
+  "game-mode"
+) as HTMLInputElement;
+if (gameModeElement) {
+  if (gameMode) {
+    gameModeElement.checked = gameMode === GameMode.Local;
+    game.mode =
+      gameMode === GameMode.Local ? GameMode.Local : GameMode.Computer;
+  }
+
+  gameModeElement.addEventListener("click", () => {
+    game.mode = gameModeElement.checked ? GameMode.Local : GameMode.Computer;
+    localStorage.setItem("game_mode", game.mode);
+    game.restart();
+  });
+}

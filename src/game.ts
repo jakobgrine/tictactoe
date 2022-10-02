@@ -3,9 +3,16 @@ enum Player {
   O = "o",
 }
 
+export enum GameMode {
+  Computer = "computer",
+  Local = "local",
+}
+
 export class Game {
   board: (Player | undefined)[] = new Array(9).fill(undefined);
   turn: Player = Player.X;
+  // The computer is O.
+  mode: GameMode = GameMode.Computer;
 
   click(field: number) {
     if (this.board[field] !== undefined) return;
@@ -22,6 +29,10 @@ export class Game {
       this.showRestartDialog(`Tie.`);
     } else {
       this.switchTurns();
+    }
+
+    if (this.mode === GameMode.Computer) {
+      // TODO
     }
   }
 
