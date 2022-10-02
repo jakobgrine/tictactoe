@@ -61,7 +61,7 @@ class Game {
         return this.board[i];
       // Horizontals
       if (
-        this.board[i] &&
+        this.board[3 * i] &&
         this.board[3 * i] === this.board[3 * i + 1] &&
         this.board[3 * i] === this.board[3 * i + 2]
       )
