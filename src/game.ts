@@ -14,7 +14,7 @@ export class Game {
   // The computer is O.
   mode: GameMode = GameMode.Computer;
 
-  click(field: number) {
+  move(field: number) {
     if (this.board[field] !== undefined) return;
 
     this.board[field] = this.turn;
@@ -31,9 +31,42 @@ export class Game {
       this.switchTurns();
     }
 
-    if (this.mode === GameMode.Computer) {
-      // TODO
+    if (this.mode === GameMode.Computer && this.turn === Player.O) {
+      const field = this.minMax(this.turn);
+      this.move(field);
     }
+  }
+
+  minMax(turn: Player, depth: number = 0): number {
+    const winner = this.getWinner();
+    if (winner) {
+      if (winner === turn) {
+        return 1;
+      } else {
+        return -1;
+      }
+    } else if (this.isBoardFull()) {
+      return 0;
+    }
+
+    let max = -Infinity;
+    let move = -1;
+    const possibleMoves = [...Array(9).keys()].filter(
+      (field) => !this.board[field]
+    );
+    for (const field of possibleMoves) {
+      this.board[field] = turn;
+      const score = -this.minMax(
+        turn === Player.O ? Player.X : Player.O,
+        depth + 1
+      );
+      this.board[field] = undefined;
+      if (score > max) {
+        max = score;
+        move = field;
+      }
+    }
+    return depth === 0 ? move : max;
   }
 
   // Switches the current turn and updates the displayed value.

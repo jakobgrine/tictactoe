@@ -8,7 +8,7 @@ Array.prototype.forEach.call(
     element.addEventListener("click", (event) => {
       const target = event.target as HTMLElement;
       const field = Number(target.id.replace("field-", ""));
-      game.click(field);
+      game.move(field);
     });
   }
 );
