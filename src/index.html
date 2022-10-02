@@ -10,26 +10,32 @@
     <script type="module" src="index.ts"></script>
   </head>
   <body>
+    <dialog id="restart-dialog">
+      <form method="dialog">
+        <p id="restart-dialog-message"><span class="x">X</span> won.</p>
+        <button id="restart-button">Restart</button>
+      </form>
+    </dialog>
     <main>
       <header>
         <span><span id="turn"><span class="x">X</span>'s</span> turn.</span>
-        <label class="toggle" for="game-mode">
+        <!-- <label class="toggle" for="game-mode">
           <input type="checkbox" name="game-mode" id="game-mode" />
           <span class="slider"></span>
           <span class="text left">Computer</span>
           <span class="text right">Local</span>
-        </label>
+        </label> -->
       </header>
       <div id="board">
-        <div class="field x" id="field-0"></div>
+        <div class="field" id="field-0"></div>
         <div class="field" id="field-1"></div>
         <div class="field" id="field-2"></div>
-        <div class="field o" id="field-3"></div>
-        <div class="field x" id="field-4"></div>
+        <div class="field" id="field-3"></div>
+        <div class="field" id="field-4"></div>
         <div class="field" id="field-5"></div>
         <div class="field" id="field-6"></div>
         <div class="field" id="field-7"></div>
-        <div class="field o" id="field-8"></div>
+        <div class="field" id="field-8"></div>
       </div>
     </main>
   </body>

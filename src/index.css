@@ -35,6 +35,39 @@ body {
   color: var(--foreground-color);
 }
 
+dialog {
+  border: none;
+  background-color: transparent;
+  color: var(--foreground-color);
+  font-size: 1.5rem;
+}
+
+dialog::backdrop {
+  background-color: #121212;
+  opacity: 0.85;
+}
+
+dialog > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: .5rem;
+  padding: .75rem 1.25rem;
+  background-color: #ffffff22;
+  color: var(--foreground-color);
+  font-size: 1.3rem;
+}
+
+button:hover {
+  background-color: #ffffff44;
+}
+
 main {
   width: min(100%, 40rem);
   height: 100%;
