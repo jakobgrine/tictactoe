@@ -1,0 +1,23 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe in the browser.",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakobgrine/tictactoe.git"
+  },
+  "author": "jakobgrine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakobgrine/tictactoe/issues"
+  },
+  "homepage": "https://github.com/jakobgrine/tictactoe#readme",
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}
